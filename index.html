@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rincón Dulce | Repostería Artesanal</title>
+    <!-- Google Fonts: Montserrat para modernidad y Dancing Script para toques artesanales -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-purple: #a67bb5; /* Púrpura del borde del logo */
+            --soft-lavender: #f3e8f5; /* Fondo muy suave para contraste */
+            --text-color: #6b4a7d;    /* Púrpura oscuro para legibilidad */
+            --white: #ffffff;
+            --accent-gold: #f9d978;   /* Inspirado en las estrellas del logo */
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(166, 123, 181, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 70px; /* Tamaño optimizado */
+            width: auto;
+        }
+
+        .brand-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-purple);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-purple);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(243, 232, 245, 0.8), rgba(243, 232, 245, 0.8)), 
+                        url('https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: var(--primary-purple);
+            margin-bottom: 10px;
+        }
+
+        /* Grid de Productos - Mobile First */
+        .catalog {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: var(--primary-purple);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--soft-lavender);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(166, 123, 181, 0.2);
+        }
+
+        .card-img {
+            height: 250px;
+            background-color: var(--soft-lavender);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-info {
+            padding: 25px;
+        }
+
+        .card-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-purple);
+        }
+
+        /* Footer & Contact */
+        footer {
+            background-color: var(--soft-lavender);
+            padding: 60px 5% 20px;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .phone-link {
+            font-size: 1.5rem;
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://i.imgur.com/G5ZpXpL.png" alt="Logo El Rincón Dulce" class="logo-img">
+            <span class="brand-name">El Rincón Dulce</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <h1>Dulzura en cada detalle</h1>
+            <p>Repostería artesanal ubicada en Rio Grande, Texas.</p>
+        </section>
+
+        <section class="catalog" id="especialidades">
+            <h2 class="section-title">Nuestras Especialidades</h2>
+            <div class="grid">
+                <!-- Producto 1 -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&q=80&w=400" alt="Cheesecakes" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-info">
+                        <h3>Premium Cheesecakes</h3>
+                        <p>Nuestra especialidad de la casa, suaves y cremosos.</p>
+                    </div>
+                </article>
+
+                <!-- Producto 2 -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=400" alt="Pasteles Personalizados" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pasteles de Eventos</h3>
+                        <p>Diseños personalizados para bodas y cumpleaños.</p>
+                    </div>
+                </article>
+
+                <!-- Producto 3 -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1464305795204-6f5bdf7f81b1?auto=format&fit=crop&q=80&w=400" alt="Sabores con Cajeta" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-info">
+                        <h3>Sabor Tradicional</h3>
+                        <p>Delicias rellenas de cajeta y lechera artesanal.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <div class="contact-box">
+            <h3>Haz tu pedido hoy</h3>
+            <p>Atención personalizada en Rio Grande, TX.</p>
+            <a href="tel:9562978214" class="phone-link">(956) 297-8214</a>
+            <br>
+            <a href="#" class="whatsapp-btn">Enviar WhatsApp</a>
+        </div>
+        <p>&copy; 2026 El Rincón Dulce | Horneando con amor.</p>
+    </footer>
+
+</body>
+</html>
