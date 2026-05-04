@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Rincón Dulce | Repostería Artesanal</title>
+    <title>El Rincón Dulce | Repostería Artesanal en Rio Grande, TX</title>
     <!-- Google Fonts: Montserrat para modernidad y Dancing Script para toques artesanales -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -49,10 +49,15 @@
             gap: 15px;
         }
 
+        /* --- SOLUCIÓN DEL PROBLEMA DEL LOGO --- */
         .logo-img {
-            height: 70px; /* Tamaño optimizado */
-            width: auto;
+            /* Restricciones de tamaño en ESCRITORIO */
+            height: 70px;          /* Altura fija y elegante */
+            width: auto;           /* Mantiene la proporción */
+            max-width: 100%;       /* Asegura que no se desborde */
+            display: block;        /* Evita espacios extra debajo */
         }
+        /* --- FIN DE LA SOLUCIÓN --- */
 
         .brand-name {
             font-family: 'Dancing Script', cursive;
@@ -102,7 +107,7 @@
             margin-bottom: 10px;
         }
 
-        /* Grid de Productos - Mobile First */
+        /* Grid de Productos */
         .catalog {
             padding: 60px 5%;
             max-width: 1200px;
@@ -207,10 +212,17 @@
             font-weight: 600;
         }
 
+        /* --- Media Query para MÓVIL (Ajuste del Logo) --- */
         @media (max-width: 600px) {
             header { flex-direction: column; gap: 15px; }
+            
+            .logo-img {
+                height: 55px; /* Altura más pequeña para celulares */
+            }
+            
             .hero h1 { font-size: 2.5rem; }
             nav ul { gap: 15px; }
+            .brand-name { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -218,7 +230,8 @@
 
     <header>
         <div class="logo-container">
-            <img src="1000300990.jpg" alt="Logo El Rincón Dulce">
+            <!-- NOTA: Reemplaza '1000300990.jpg' con la ruta real de tu imagen -->
+            <img src="1000300990.jpg" alt="Logo El Rincón Dulce" class="logo-img">
             <span class="brand-name">El Rincón Dulce</span>
         </div>
         <nav>
